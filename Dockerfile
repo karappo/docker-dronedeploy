@@ -5,3 +5,4 @@ RUN apt-get upgrade -y
 RUN apt-get -y install ssh-askpass sshpass lftp rsync wget
 RUN which rsync
 RUN which wget
+RUN ls -la /usr/bin
