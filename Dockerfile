@@ -7,5 +7,4 @@ RUN echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 RUN mkdir ~/.ssh && chmod 700 ~/.ssh
 
 # Install Composer
-RUN php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
