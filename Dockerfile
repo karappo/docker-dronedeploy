@@ -7,8 +7,8 @@ RUN echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 RUN mkdir ~/.ssh && chmod 700 ~/.ssh
 
 # Install Composer ################
-
 # Ref: https://hub.docker.com/r/composer/composer/~/dockerfile/
+
 RUN apk --update add \
     autoconf \
     build-base \
